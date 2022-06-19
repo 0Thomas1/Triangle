@@ -72,16 +72,13 @@ public class Lab4OOP {
     }
     public static void trueMain(){
         System.out.println("Enter the coordinates of triangle ABC");
-        Point A = new Point();
-        A.setName("A");
+        Point A = new Point("A");
         A.setCoor();
 
-        Point B = new Point();
-        B.setName("B");
+        Point B = new Point("B");
         B.setCoor();
 
-        Point C = new Point();
-        C.setName("C");
+        Point C = new Point("C");
         C.setCoor();
 
         A.invalidMessageOutput();

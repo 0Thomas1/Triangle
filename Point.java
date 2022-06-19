@@ -1,11 +1,11 @@
 import java.util.Scanner;
  class Point{
      boolean isValid = true; // valid status
-     String name = "Not Given"; // point name
+     String name; // point name
      int X; // X coordinate
      int Y; // Y coordinate
-     void setName(String name){
-         // set instance name
+     Point(String name){
+         // constructor
         this.name = name;
     }
     void setCoor(){
@@ -15,6 +15,7 @@ import java.util.Scanner;
         X = in.nextInt();
         System.out.print("Y-coordinate of "+ name+ ": ");
         Y = in.nextInt();
+        in.close();
     }
 
     boolean verifyInput() {
