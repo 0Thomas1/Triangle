@@ -24,13 +24,13 @@ import java.util.Scanner;
             return true;
         }
         else {
-            isValid = false;
+            this.isValid = false;
             return false;
         }
     }
     void invalidMessageOutput(){
          // construct invalid message and print it
-        if (!verifyInput()){
+        if (!this.verifyInput()){
             String invalidMessage = "coordinate (" + X + "," + Y + ")" + " is not in acceptable range";
             System.out.println(invalidMessage);
         }
