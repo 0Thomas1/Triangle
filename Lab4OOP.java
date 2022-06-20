@@ -26,6 +26,12 @@ public class Lab4OOP {
         double s = perimeter(p1, p2, p3)/2.0;
         return Math.sqrt(s * (s - distance(p1, p2)) * (s - distance(p3, p2)) * (s - distance(p3, p1)));
     }
+    public static void setValidFalse(Point p1, Point p2, Point p3){
+       // set the input points as invalid
+        p1.isValid = false;
+        p2.isValid = false;
+        p3.isValid = false;
+    }
     public static boolean isLine (Point p1, Point p2, Point p3) {
         //Takes the three points of the triangle, A, B, and C, and returns true if they
         //located on a single line, otherwise it returns false
@@ -37,15 +43,11 @@ public class Lab4OOP {
         double mAB = (double) (p1.Y-p2.Y)/(diffxAB);
         double mAC = (double) (p1.Y-p3.Y)/(diffxAC);
         if ((diffxAB == 0) && (diffxAC == 0)){
-            p1.isValid = false;
-            p2.isValid = false;
-            p3.isValid = false;
+            setValidFalse(p1, p2, p3);
             return true;
         }
         else if (Math.abs(mAB - mAC) < EPSILON){
-            p1.isValid = false;
-            p2.isValid = false;
-            p3.isValid = false;
+            setValidFalse(p1, p2, p3);
             return true;
         }
         else
@@ -53,7 +55,7 @@ public class Lab4OOP {
     }
     public static void validOutput(Point p1, Point p2, Point p3){
         // outputs for valid values
-        System.out.println("Triangle: "+ p1.fullCorr() + ", " + p2.fullCorr() + ", and "+ p3.fullCorr());
+        System.out.printf("Triangle: %s, %s, and %s\n",p1.fullCorr(),p2.fullCorr(),p3.fullCorr());
         System.out.println("Perimeter = " + perimeter(p1, p2, p3));
         System.out.println("Area      = " + area(p1, p2, p3));
     }

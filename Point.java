@@ -12,10 +12,9 @@ import java.util.Scanner;
          // prompt user to set instance's coor.
         Scanner in = new Scanner(System.in);
         System.out.print("x-coordinate of "+ name+ ": ");
-        X = in.nextInt();
+        this.X = in.nextInt();
         System.out.print("Y-coordinate of "+ name+ ": ");
-        Y = in.nextInt();
-        in.close();
+        this.Y = in.nextInt();
     }
 
     boolean verifyInput() {

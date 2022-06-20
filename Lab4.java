@@ -18,9 +18,9 @@ public class Lab4 {
         // otherwise it returns false
         return (x >= 0) && (x <= 40) && (y >= 0) && (y <= 40);
     }
-    public static double distance (int x1, int y1, int x2, int y2) {
+    public static double distance (int xA, int yA, int xB, int yB) {
         // Takes coordinates of two points (x1,y1), (x2,y2), then calculates and returns their distance
-        return Math.sqrt((y1 - y2)*(y1 -y2) + (x1 - x2) * (x1 - x2));
+        return Math.sqrt((yA - yB)*(yA -yB) + (xA - xB) * (xA - xB));
     }
     public static double perimeter (int xA, int yA, int xB, int yB, int xC, int yC) {
         // Takes the three coordinates of the triangle, (xA, yA), (xB, yB), (xC, yC), and returns its perimeter
@@ -79,6 +79,12 @@ public class Lab4 {
             repeat();
         }
     }
+    public static void systemOutput(int xA, int yA, int xB, int yB, int xC, int yC){
+        // outputs for valid values
+        System.out.println("Triangle: A(" + xA + "," + yA + "), B(" + xB + "," + yB + "), and C(" + xC + "," + yC + ")");
+        System.out.println("Perimeter = " + perimeter(xA, yA, xB, yB, xC, yC));
+        System.out.println("Area      = " + area(xA, yA, xB, yB, xC, yC));
+    }
     public static void start() {
         // start of program
         // initializing variables
@@ -114,10 +120,7 @@ public class Lab4 {
             repeat();
         }
         else {
-            // outputs for valid values
-            System.out.println("Triangle: A(" + xA + "," + yA + "), B(" + xB + "," + yB + "), and C(" + xC + "," + yC + ")");
-            System.out.println("Perimeter = " + perimeter(xA, yA, xB, yB, xC, yC));
-            System.out.println("Area      = " + area(xA, yA, xB, yB, xC, yC));
+            systemOutput(xA, yA, xB, yB, xC, yC);
             // repeat the program
             repeat();
         }
